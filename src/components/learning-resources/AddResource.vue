@@ -90,7 +90,8 @@ export default {
 	input,
 	textarea {
 		display: block;
-		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
 		font: inherit;
 		padding: 0.15rem;
 		border: 1px solid #ccc;
