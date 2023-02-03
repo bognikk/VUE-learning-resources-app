@@ -1,5 +1,9 @@
 <template>
-	<base-dialog v-if="inputIsInvalid" title="Invalid Input" @closeDialog="confirmError">
+	<base-dialog
+		v-if="inputIsInvalid"
+		title="Invalid Input"
+		@closeDialog="confirmError"
+	>
 		<template #default>
 			<p>Unfortunately, at least one input value is invalid.</p>
 			<p>
@@ -61,6 +65,10 @@ export default {
 			}
 
 			this.addResource(enteredTitle, enteredDescription, enteredUrl);
+
+			this.$refs.titleInput.value = "";
+			this.$refs.descInput.value = "";
+			this.$refs.linkInput.value = "";
 		},
 		confirmError() {
 			this.inputIsInvalid = false;
